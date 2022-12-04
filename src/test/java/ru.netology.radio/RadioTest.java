@@ -9,6 +9,7 @@ class RadioTest {
     Radio radio = new Radio(10);
 
     // тестируем объекты радио
+
     @Test
     public void currentRadioStationеUnderMaxOverMin() {
         radio.setCurrentRadioStation(5);
@@ -44,6 +45,7 @@ class RadioTest {
         radio.setCurrentVolume(-1);
         assertEquals(0, radio.getCurrentVolume());
     }
+
 
     // тестируем переключение станций
     @Test
