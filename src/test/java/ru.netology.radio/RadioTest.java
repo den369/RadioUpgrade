@@ -6,9 +6,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
 
-    Radio radio = new Radio();
+    // тестируем пустой конструктор с размещением доп. действий
+
+    @Test
+    public void testEmptyConstructor() {
+        Radio radio = new Radio();
+    }
+
+    Radio radio = new Radio(10);
 
     // тестируем объекты радио
+
+
     @Test
     public void currentRadioStationеUnderMaxOverMin() {
         radio.setCurrentRadioStation(5);
@@ -35,7 +44,7 @@ class RadioTest {
 
     @Test
     public void currentVolumeOverMax() {
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(101);
         assertEquals(0, radio.getCurrentVolume());
     }
 
@@ -44,6 +53,7 @@ class RadioTest {
         radio.setCurrentVolume(-1);
         assertEquals(0, radio.getCurrentVolume());
     }
+
 
     // тестируем переключение станций
     @Test
@@ -92,9 +102,9 @@ class RadioTest {
     // тестируем переключение громкости
     @Test
     public void volumeOverMax() {
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         radio.volumePlus();
-        assertEquals(10, radio.getCurrentVolume());
+        assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
@@ -107,16 +117,16 @@ class RadioTest {
 
     @Test
     public void plusVolume() {
-        radio.setCurrentVolume(4);
+        radio.setCurrentVolume(49);
         radio.volumePlus();
-        assertEquals(5, radio.getCurrentVolume());
+        assertEquals(50, radio.getCurrentVolume());
     }
 
     @Test
     public void minusVolume() {
-        radio.setCurrentVolume(7);
+        radio.setCurrentVolume(70);
         radio.volumeMinus();
-        assertEquals(6, radio.getCurrentVolume());
+        assertEquals(69, radio.getCurrentVolume());
     }
 
     @Test
@@ -128,8 +138,8 @@ class RadioTest {
 
     @Test
     public void volumeOverPenultMax() {
-        radio.setCurrentVolume(9);
+        radio.setCurrentVolume(99);
         radio.volumePlus();
-        assertEquals(10, radio.getCurrentVolume());
+        assertEquals(100, radio.getCurrentVolume());
     }
 }
