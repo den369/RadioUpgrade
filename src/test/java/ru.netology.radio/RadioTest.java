@@ -6,9 +6,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
 
+    // тестируем пустой конструктор с размещением доп. действий
+
+    @Test
+    public void testEmptyConstructor() {
+        Radio radio = new Radio();
+    }
+
     Radio radio = new Radio(10);
 
     // тестируем объекты радио
+
 
     @Test
     public void currentRadioStationеUnderMaxOverMin() {

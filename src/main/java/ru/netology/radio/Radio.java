@@ -7,14 +7,14 @@ public class Radio {
     private int stationsCount;
 
     public Radio() {
-
+        System.out.println("Hi!");
     }
 
     public Radio(int stationsCount) {
         this.stationsCount = stationsCount;
     }
 
-     public int getCurrentRadioStation() {
+    public int getCurrentRadioStation() {
         return currentRadioStation;
     }
 
